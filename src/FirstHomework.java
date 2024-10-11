@@ -10,4 +10,9 @@ public class FirstHomework {
         if ((a + b + c) >= 0) System.out.println("Сумма положительная");
         else System.out.println("Сумма отрицательная");
     }
+    public static void selectColor(int data) {
+        if (data <= 10) System.out.println("Красный");
+        else if (data > 10 && data <= 20) System.out.println("Жёлтный");
+        else System.out.println("Зелёный");
+    }
 }
