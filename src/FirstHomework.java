@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 public class FirstHomework {
     public static void main(String[] args) {
@@ -8,10 +9,10 @@ public class FirstHomework {
             System.out.println("Вы ввели неверное число, повторите попытку!");
         }
         else if (number == 1) greetings();
-        else if (number == 2) checkSign(5, 8, 9);
-        else if (number == 3) selectColor(17);
-        else if (number == 4) compareNumbers(88, 1789);
-        else if (number == 5) addOrSubtractAndPrint(70, 3, true);
+        else if (number == 2) checkSign((int)(Math.random()*100), (int)(Math.random()*100), (int)(Math.random()*100));
+        else if (number == 3) selectColor((int)(Math.random()*100));
+        else if (number == 4) compareNumbers((int)(Math.random()*100), (int)(Math.random()*100));
+        else if (number == 5) addOrSubtractAndPrint((int)(Math.random()*100), (int)(Math.random()*100), getRandomBoolean());
     }
 
     public static void greetings() {
@@ -39,5 +40,9 @@ public class FirstHomework {
             int newInitValue = initValue - delta;
             System.out.println(newInitValue);
         }
+    }
+    public static boolean getRandomBoolean() {
+        Random random = new Random();
+        return random.nextBoolean();
     }
 }
