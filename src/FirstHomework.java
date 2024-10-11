@@ -1,6 +1,10 @@
 public class FirstHomework {
     public static void main(String[] args) {
         greetings();
+        checkSign(5, 8, 9);
+        selectColor(17);
+        compareNumbers(88, 1789);
+        addOrSubtractAndPrint(70, 3, true);
     }
 
     public static void greetings() {
