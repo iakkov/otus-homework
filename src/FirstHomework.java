@@ -15,4 +15,8 @@ public class FirstHomework {
         else if (data > 10 && data <= 20) System.out.println("Жёлтный");
         else System.out.println("Зелёный");
     }
+    public static void compareNumbers(int a, int b) {
+        if (a >= b) System.out.println("a >= b");
+        else System.out.println("a < b");
+    }
 }
