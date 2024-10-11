@@ -19,4 +19,14 @@ public class FirstHomework {
         if (a >= b) System.out.println("a >= b");
         else System.out.println("a < b");
     }
+    public static void addOrSubtractAndPrint(int initValue, int delta, boolean increment) {
+        if (increment == true) {
+            int newInitValue = initValue + delta;
+            System.out.println(newInitValue);
+        }
+        else {
+            int newInitValue = initValue - delta;
+            System.out.println(newInitValue);
+        }
+    }
 }
