@@ -1,10 +1,17 @@
+import java.util.Scanner;
 public class FirstHomework {
     public static void main(String[] args) {
-        greetings();
-        checkSign(5, 8, 9);
-        selectColor(17);
-        compareNumbers(88, 1789);
-        addOrSubtractAndPrint(70, 3, true);
+        System.out.println("Пожалуйста, напишите число от 1 до 5");
+        Scanner console = new Scanner(System.in);
+        int number = console.nextInt();
+        if (number < 1 || number > 5) {
+            System.out.println("Вы ввели неверное число, повторите попытку!");
+        }
+        else if (number == 1) greetings();
+        else if (number == 2) checkSign(5, 8, 9);
+        else if (number == 3) selectColor(17);
+        else if (number == 4) compareNumbers(88, 1789);
+        else if (number == 5) addOrSubtractAndPrint(70, 3, true);
     }
 
     public static void greetings() {
