@@ -19,4 +19,9 @@ public class Lesson5 {
         }
         System.out.println("Сумма элементов больше 5: " + sum);
     }
+    public static void fillArray(int a, int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            array[i] = a;
+        }
+    }
 }
