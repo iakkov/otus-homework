@@ -1,3 +1,5 @@
+package hello.world.pack;
+
 public class Lesson5 {
     public static void main(String[] args) {
         countString(5, "Кошка");
