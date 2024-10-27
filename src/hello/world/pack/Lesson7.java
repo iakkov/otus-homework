@@ -9,6 +9,7 @@ public class Lesson7 {
         //printStarsSquare(5);
         fillArray(array1);
         printZeroDiagonal(array1);
+        System.out.println(findMax(array));
     }
     public static int sumOfPositiveElements(int[][] array) {
         int sum = 0;
@@ -48,5 +49,16 @@ public class Lesson7 {
                 array[i][j] = 1;
             }
         }
+    }
+    public static int findMax(int[][] array) {
+        int max = Integer.MIN_VALUE;
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                if (array[i][j] > max) {
+                    max = array[i][j];
+                }
+            }
+        }
+        return max;
     }
 }
