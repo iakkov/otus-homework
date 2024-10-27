@@ -10,6 +10,7 @@ public class Lesson7 {
         fillArray(array1);
         printZeroDiagonal(array1);
         System.out.println(findMax(array));
+        System.out.println(calculateSumOfSecondRow(array));
     }
     public static int sumOfPositiveElements(int[][] array) {
         int sum = 0;
@@ -60,5 +61,13 @@ public class Lesson7 {
             }
         }
         return max;
+    }
+    public static int calculateSumOfSecondRow(int[][] array) {
+        int sum = 0;
+        if (array.length < 2) return -1;
+        for (int value : array[1]) {
+            sum += value;
+        }
+        return sum;
     }
 }
