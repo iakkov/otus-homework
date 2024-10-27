@@ -33,7 +33,7 @@ public class Lesson7 {
     public static void printZeroDiagonal(int[][] array) {
         for (int i = 0; i < array.length; i++) {
             for (int j = 0, k = array[i].length - 1; j < array[i].length; j++, k--) {
-                if (i == j || i == k) {
+                if (i == j) {
                     array[i][j] = 0;
                     System.out.print(array[i][j]);
                 }
