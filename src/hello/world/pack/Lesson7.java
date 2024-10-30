@@ -8,7 +8,8 @@ public class Lesson7 {
 
         //printStarsSquare(5);
         //fillArray(array1);
-        //printZeroDiagonal(array1);
+        //printZeroDiagonalOneSide(array1);
+        //printZeroDiagonalTwoSides(array1);
         //System.out.println(findMax(array));
         //System.out.println(calculateSumOfSecondRow(array));
     }
@@ -31,14 +32,24 @@ public class Lesson7 {
             System.out.println();
         }
     }
-    public static void printZeroDiagonal(int[][] array) {
+    public static void printZeroDiagonalOneSide(int[][] array) {
         for (int i = 0; i < array.length; i++) {
-            for (int j = 0, k = array[i].length - 1; j < array[i].length; j++, k--) {
+            for (int j = 0; j < array[i].length; j++) {
                 if (i == j) {
                     array[i][j] = 0;
-                    System.out.print(array[i][j]);
                 }
-                else System.out.print(array[i][j]);
+                    System.out.print(array[i][j]);
+            }
+            System.out.println();
+        }
+    }
+    public static void printZeroDiagonalTwoSides(int[][] array) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0, k = array[i].length - 1; j < array[i].length; j++, k--) {
+                if (i == j || i == k) {
+                    array[i][j] = 0;
+                }
+                    System.out.print(array[i][j]);
             }
             System.out.println();
         }
