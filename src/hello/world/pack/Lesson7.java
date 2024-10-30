@@ -7,10 +7,10 @@ public class Lesson7 {
         System.out.println(sumOfPositiveElements(array));
 
         //printStarsSquare(5);
-        fillArray(array1);
-        printZeroDiagonal(array1);
-        System.out.println(findMax(array));
-        System.out.println(calculateSumOfSecondRow(array));
+        //fillArray(array1);
+        //printZeroDiagonal(array1);
+        //System.out.println(findMax(array));
+        //System.out.println(calculateSumOfSecondRow(array));
     }
     public static int sumOfPositiveElements(int[][] array) {
         int sum = 0;
@@ -24,9 +24,8 @@ public class Lesson7 {
         return sum;
     }
     public static void printStarsSquare(int size) {
-        int[][] array = new int[size][size];
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
                 System.out.print("*");
             }
             System.out.println();
