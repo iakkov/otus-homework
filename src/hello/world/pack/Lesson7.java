@@ -8,8 +8,8 @@ public class Lesson7 {
 
         //printStarsSquare(7);
         fillArray(array1);
-        //printZeroDiagonalOneSide(array1);
-        printZeroDiagonalTwoSides(array1);
+        printZeroDiagonalOneSide(array1);
+        //printZeroDiagonalTwoSides(array1);
         //System.out.println(findMax(array));
         //System.out.println(calculateSumOfSecondRow(array));
     }
@@ -37,9 +37,8 @@ public class Lesson7 {
             for (int j = 0; j < array[i].length; j++) {
                 if (i == j) {
                     array[i][j] = 0;
-                    System.out.print(array[i][j]);
                 }
-                else System.out.print(array[i][j]);
+                System.out.print(array[i][j]);
             }
             System.out.println();
         }
