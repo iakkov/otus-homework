@@ -21,7 +21,8 @@ public class Main {
             if (users[i].getBirthYear() < (currentYear - 40) ) {
                 users[i].printInfo();
             }
-
         }
+        Box box1 = new Box(120, 80, 80, "Красная");
+        box1.getInfo();
     }
 }
