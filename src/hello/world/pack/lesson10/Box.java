@@ -34,7 +34,12 @@ public class Box {
         System.out.println("Вы положили в коробку " + object + ". Теперь коробка заполнена!");
     }
     public void getSomething() {
-        this.object = null;
-        System.out.println("Коробка теперь пустая.");
+        if (isOpen) {
+            this.object = null;
+            System.out.println("Коробка теперь пустая.");
+        }
+        else {
+            System.out.println("Сначала откройте коробку!");
+        }
     }
 }
