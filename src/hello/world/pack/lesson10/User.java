@@ -18,5 +18,9 @@ public class User {
         System.out.println("Ф.И.О.: " + lastname + " " + firstname + " " + patronymic);
         System.out.println("Год рождения: " + birthYear);
         System.out.println("e-mail: " + email);
+        System.out.println();
+    }
+    public int getBirthYear() {
+        return birthYear;
     }
 }

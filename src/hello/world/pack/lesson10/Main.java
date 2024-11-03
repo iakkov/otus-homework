@@ -1,7 +1,10 @@
 package hello.world.pack.lesson10;
 
+import com.sun.security.jgss.GSSUtil;
+
 public class Main {
     public static void main(String[] args) {
+        int currentYear = 2024;
         User[] users = new User[10];
         users[0] = new User("Ivanov", "Ivan", "Ivanovich", 1998, "ivanovi@mail.ru");
         users[1] = new User("Petrov", "Petr", "Petrovich", 1976, "petrov_p@gmail.com");
@@ -13,5 +16,12 @@ public class Main {
         users[7] = new User("Pavlov", "Pavel", "Pavlovich", 2005, "superpavel05@yandex.ru");
         users[8] = new User("Maximov", "Maxim", "Maximovich", 1977, "max_77@live.ru");
         users[9] = new User("Kotlov", "Yuri", "Vadimovich", 1994, "kotlov_y@rambler.ru");
+
+        for (int i = 0; i < users.length; i++) {
+            if (users[i].getBirthYear() < (currentYear - 40) ) {
+                users[i].printInfo();
+            }
+
+        }
     }
 }
