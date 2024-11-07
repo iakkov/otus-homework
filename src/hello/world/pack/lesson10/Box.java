@@ -30,8 +30,16 @@ public class Box {
         else System.out.println("Коробка закрыта!");
     }
     public void putSomething(String object) {
-        this.object = object;
-        System.out.println("Вы положили в коробку " + object + ". Теперь коробка заполнена!");
+        if (isOpen && this.object == null) {
+            this.object = object;
+            System.out.println("Вы положили в коробку " + object + ". Теперь коробка заполнена!");
+        }
+        else if (!isOpen) {
+            System.out.println("Откройте пожалуйста коробку.");
+        }
+        else {
+            System.out.println("В коробке уже есть " + this.object);
+        }
     }
     public void getSomething() {
         if (isOpen) {
