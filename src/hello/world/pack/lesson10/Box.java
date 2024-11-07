@@ -13,11 +13,11 @@ public class Box {
         this.heigth = heigth;
         this.color = color;
     }
-    public void openBox() {
+    public void open() {
         isOpen = true;
         System.out.println("Вы открыли коробку");
     }
-    public void closeBox() {
+    public void close() {
         isOpen = false;
         System.out.println("Вы закрыли коробку");
     }
