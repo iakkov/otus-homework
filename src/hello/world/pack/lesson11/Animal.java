@@ -12,4 +12,8 @@ public class Animal {
         this.swimmingSpeed = swimmingSpeed;
         this.stamina = stamina;
     }
+    public int run(int distance) {
+         stamina -= distance;
+         return distance / runningSpeed;
+    }
 }
