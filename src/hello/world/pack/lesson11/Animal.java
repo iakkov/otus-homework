@@ -12,8 +12,10 @@ public class Animal {
         this.swimmingSpeed = swimmingSpeed;
         this.stamina = stamina;
     }
-    public int run(int distance) {
+    public double run(int distance) {
          stamina -= distance;
-         return distance / runningSpeed;
+         System.out.println(name + " пробежал " + distance + " метров. Осталось " + stamina + " единиц выносливости.");
+         double time = (distance / runningSpeed) + (distance % runningSpeed);
+         return time;
     }
 }
