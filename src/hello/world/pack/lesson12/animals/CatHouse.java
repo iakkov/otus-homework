@@ -13,5 +13,9 @@ public class CatHouse {
         for (int i = 0; i < cats.length; i++) {
             cats[i].eat(plate);
         }
+        System.out.println("-----------------");
+        for (int i = 0; i < cats.length; i++) {
+            cats[i].info();
+        }
     }
 }

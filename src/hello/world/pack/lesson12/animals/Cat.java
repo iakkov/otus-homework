@@ -25,6 +25,7 @@ public class Cat {
         System.out.println("Меня зовут " + name + ". Мой аппетит равен " + appetite + " единицам.");
         if (!fullness) {
             System.out.println("Я голоден!");
+            return;
         }
         System.out.println("Я сыт!");
     }
