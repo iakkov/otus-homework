@@ -11,7 +11,6 @@ public class Horse extends Animal {
         }
         stamina = stamina - (distance * 4);
         System.out.println(name + " проплыл " + distance + " метров. Осталось " + stamina + " единиц выносливости.");
-        double time = (distance / runningSpeed) + (distance % runningSpeed);
-        return time;
+        return (double)(distance / swimmingSpeed);
     }
 }

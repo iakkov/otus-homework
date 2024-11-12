@@ -11,7 +11,6 @@ public class Dog extends Animal {
         }
         stamina = stamina - (distance * 2);
         System.out.println(name + " проплыл " + distance + " метров. Осталось " + stamina + " единиц выносливости.");
-        double time = (distance / swimmingSpeed) + (distance % swimmingSpeed);
-        return time;
+        return (double)(distance / swimmingSpeed);
     }
 }

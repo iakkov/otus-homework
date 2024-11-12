@@ -13,13 +13,12 @@ public abstract class Animal {
         this.stamina = stamina;
     }
     public double run(int distance) {
-         if (stamina < distance) {
-             System.out.println(name + " устало!");
+        if (stamina < distance) {
+             System.out.println(name + " устал!");
              return -1;
-         }
-         stamina -= distance;
-         System.out.println(name + " пробежал " + distance + " метров. Осталось " + stamina + " единиц выносливости.");
-         double time = (distance / runningSpeed) + (distance % runningSpeed);
-         return time;
+        }
+        stamina -= distance;
+        System.out.println(name + " пробежал " + distance + " метров. Осталось " + stamina + " единиц выносливости.");
+        return (double)distance / runningSpeed;
     }
 }
