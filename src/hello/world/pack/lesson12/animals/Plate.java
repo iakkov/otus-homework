@@ -19,7 +19,7 @@ public class Plate {
         this.volume = volume;
     }
     public void putFood(int howMuch) {
-        if((currentAmountOfFood + howMuch) > volume) {
+        if ((currentAmountOfFood + howMuch) > volume) {
             System.out.println("Тарелка заполнена!");
         }
         currentAmountOfFood += howMuch;
@@ -27,5 +27,12 @@ public class Plate {
         if (volume == currentAmountOfFood) {
             System.out.println("Тарелка полная.");
         }
+    }
+    public boolean minusFood(int howMuch) {
+        if ((currentAmountOfFood - howMuch) < volume) {
+            return false;
+        }
+        currentAmountOfFood -= howMuch;
+        return true;
     }
 }
