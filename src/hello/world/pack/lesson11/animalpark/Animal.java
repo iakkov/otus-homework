@@ -1,6 +1,6 @@
-package hello.world.pack.lesson11;
+package hello.world.pack.lesson11.animalpark;
 
-public class Animal {
+public abstract class Animal {
     String name;
     int runningSpeed;
     int swimmingSpeed;

@@ -1,4 +1,4 @@
-package hello.world.pack.lesson11;
+package hello.world.pack.lesson11.animalpark;
 
 public class Horse extends Animal {
     public Horse(String name, int runningSpeed, int swimmingSpeed, int stamina) {
