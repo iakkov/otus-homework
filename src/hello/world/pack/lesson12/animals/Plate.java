@@ -18,4 +18,14 @@ public class Plate {
     public void setVolume(int volume) {
         this.volume = volume;
     }
+    public void putFood(int howMuch) {
+        if((currentAmountOfFood + howMuch) > volume) {
+            System.out.println("Тарелка заполнена!");
+        }
+        currentAmountOfFood += howMuch;
+        System.out.println("Вы насыпали в тарелку " + howMuch + " ед. еды. Теперь в тарелке " + currentAmountOfFood + " ед. еды.");
+        if (volume == currentAmountOfFood) {
+            System.out.println("Тарелка полная.");
+        }
+    }
 }
