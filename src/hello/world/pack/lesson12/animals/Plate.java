@@ -29,7 +29,7 @@ public class Plate {
         }
     }
     public boolean minusFood(int howMuch) {
-        if ((currentAmountOfFood - howMuch) < volume) {
+        if ((currentAmountOfFood - howMuch) < 0) {
             return false;
         }
         currentAmountOfFood -= howMuch;

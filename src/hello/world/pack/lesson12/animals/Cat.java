@@ -13,12 +13,13 @@ public class Cat {
         return name;
     }
     public void eat(Plate plate) {
-        if (plate.getCurrentAmountOfFood() < appetite) {
-            System.out.println("Еды недостаточно.");
+        if (!plate.minusFood(appetite)) {
+            System.out.println("Еды недостаточно. " + name + " не поел.");
+            return;
         }
-        plate.minusFood(appetite);
         appetite = 0;
         fullness = true;
+        System.out.println(name + " покушал, теперь он сыт.");
     }
     public void info() {
         System.out.println("Меня зовут " + name + ". Мой аппетит равен " + appetite + " единицам.");
