@@ -3,6 +3,7 @@ package hello.world.pack.lesson13.transports;
 import hello.world.pack.lesson13.terrain.Terrain;
 
 public class Car implements Transport {
+    private final static String NAME = "машина";
     private int fuel;
     public Car(int fuel) {
         this.fuel = fuel;
@@ -21,5 +22,9 @@ public class Car implements Transport {
         fuel -= distance;
         System.out.println("Машина проехала " + distance + " км по " + terrainType + ". Осталось бензина: " + fuel);
         return true;
+    }
+    @Override
+    public String getName() {
+        return NAME;
     }
 }

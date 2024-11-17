@@ -3,6 +3,7 @@ package hello.world.pack.lesson13.transports;
 import hello.world.pack.lesson13.terrain.Terrain;
 
 public class Bicycle implements Transport {
+    private final static String NAME = "велосипед";
     private int stamina;
     public Bicycle (int stamina) {
         this.stamina = stamina;
@@ -20,5 +21,9 @@ public class Bicycle implements Transport {
         stamina -= distance;
         System.out.println("Человек проехал на велосипеде " + distance + " км по " + terrain.getType() + ". Осталось сил: " + stamina);
         return true;
+    }
+    @Override
+    public String getName() {
+        return NAME;
     }
 }

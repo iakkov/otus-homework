@@ -1,7 +1,7 @@
 package hello.world.pack.lesson13;
 
-import hello.world.pack.lesson13.terrain.Terrain;
-import hello.world.pack.lesson13.transports.Transport;
+import hello.world.pack.lesson13.terrain.*;
+import hello.world.pack.lesson13.transports.*;
 
 public class Human {
     private String name;
@@ -11,10 +11,10 @@ public class Human {
     }
     public void getInto(Transport transport) {
         this.transport = transport;
-        System.out.println(name + " теперь передвигается на " + transport);
+        System.out.println(name + " теперь передвигается на " + transport.getName());
     }
     public void getOut() {
-        System.out.println(name + " вышел из " + this.transport);
+        System.out.println(name + " вышел из " + transport);
         this.transport = null;
     }
     public boolean move(Terrain terrain, int distance) {

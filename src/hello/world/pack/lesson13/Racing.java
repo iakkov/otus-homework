@@ -1,14 +1,7 @@
 package hello.world.pack.lesson13;
 
-import hello.world.pack.lesson13.Human;
-import hello.world.pack.lesson13.terrain.Forest;
-import hello.world.pack.lesson13.terrain.Meadow;
-import hello.world.pack.lesson13.terrain.Swamp;
-import hello.world.pack.lesson13.terrain.Terrain;
-import hello.world.pack.lesson13.transports.Bicycle;
-import hello.world.pack.lesson13.transports.Car;
-import hello.world.pack.lesson13.transports.Horse;
-import hello.world.pack.lesson13.transports.Rover;
+import hello.world.pack.lesson13.terrain.*;
+import hello.world.pack.lesson13.transports.*;
 
 public class Racing {
     public static void main(String[] args) {
@@ -17,11 +10,16 @@ public class Racing {
         Car car = new Car(50);
         Horse horse = new Horse(30);
         Bicycle bicycle = new Bicycle(20);
-        Rover rover = new Rover(40);
+        Rover rover = new Rover(80);
 
         Terrain forest = new Forest();
         Terrain meadow = new Meadow();
         Terrain swamp = new Swamp();
 
+        human.getInto(rover);
+        human.move(swamp, 15);
+        human.getOut();
+        human.getInto(horse);
+        human.move(meadow, 30);
     }
 }
