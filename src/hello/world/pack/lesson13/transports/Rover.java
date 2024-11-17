@@ -3,7 +3,10 @@ package hello.world.pack.lesson13.transports;
 import hello.world.pack.lesson13.terrain.Terrain;
 
 public class Rover implements Transport {
-    int fuel;
+    private int fuel;
+    public Rover(int fuel) {
+        this.fuel = fuel;
+    }
     @Override
     public boolean move(int distance, Terrain terrain) {
         if (fuel < distance) {

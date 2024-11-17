@@ -3,7 +3,10 @@ package hello.world.pack.lesson13.transports;
 import hello.world.pack.lesson13.terrain.Terrain;
 
 public class Bicycle implements Transport {
-    int stamina;
+    private int stamina;
+    public Bicycle (int stamina) {
+        this.stamina = stamina;
+    }
     @Override
     public boolean move(int distance, Terrain terrain) {
         if (terrain.getType().equals("болото")) {

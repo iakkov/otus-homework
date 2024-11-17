@@ -3,7 +3,10 @@ package hello.world.pack.lesson13.transports;
 import hello.world.pack.lesson13.terrain.Terrain;
 
 public class Horse implements Transport {
-    int power;
+    private int power;
+    public Horse(int power) {
+        this.power = power;
+    }
     @Override
     public boolean move(int distance, Terrain terrain) {
         if (terrain.getType().equals("болото")) {
