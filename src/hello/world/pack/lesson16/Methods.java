@@ -38,4 +38,13 @@ public class Methods {
         }
         return names;
     }
+    public static ArrayList<Worker> minimalAge(ArrayList<Worker> workers, int minAge) {
+        ArrayList<Worker> workersWithMinimalAge = new ArrayList<>();
+        for (int i = 0; i < workers.size(); i++) {
+            if (workers.get(i).getAge() >= minAge) {
+                workersWithMinimalAge.add(workers.get(i));
+            }
+        }
+        return workersWithMinimalAge;
+    }
 }
