@@ -59,4 +59,16 @@ public class Methods {
         }
         else return false;
     }
+    public static Worker youngestWorker(ArrayList<Worker> workers) {
+        int minimalAge = Integer.MAX_VALUE;
+        Worker youngest = new Worker("TestName", 0);
+        for (int i = 0; i < workers.size(); i++) {
+            Worker current = workers.get(i);
+            if (current.getAge() < minimalAge) {
+                minimalAge = current.getAge();
+                youngest = workers.get(i);
+            }
+        }
+        return youngest;
+    }
 }
