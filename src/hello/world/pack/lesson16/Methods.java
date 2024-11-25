@@ -24,4 +24,11 @@ public class Methods {
             list.set(i, number);
         }
     }
+    public static void increaseEachNumber(int number, ArrayList<Integer> list) {
+        for (int i = 0; i < list.size(); i++) {
+            int current = list.get(i);
+            current += number;
+            list.set(i, current);
+        }
+    }
 }
