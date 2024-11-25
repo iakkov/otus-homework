@@ -10,4 +10,13 @@ public class Methods {
         }
         return list;
     }
+    public static int sumOfNumbersHigherThanFive(ArrayList<Integer> list) {
+        int sum = 0;
+        for (Integer integer : list) {
+            if (integer > 5) {
+                sum += integer;
+            }
+        }
+        return sum;
+    }
 }
