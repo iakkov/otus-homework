@@ -47,4 +47,16 @@ public class Methods {
         }
         return workersWithMinimalAge;
     }
+    public static boolean checkAge(ArrayList<Worker> workers, int minAverageAge) {
+        int sumAge = 0;
+        for (int i = 0; i < workers.size(); i++) {
+            int currentAge = workers.get(i).getAge();
+            sumAge += currentAge;
+        }
+        int averageAge = sumAge / workers.size();
+        if (averageAge > minAverageAge) {
+            return true;
+        }
+        else return false;
+    }
 }
