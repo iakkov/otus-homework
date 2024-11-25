@@ -31,4 +31,11 @@ public class Methods {
             list.set(i, current);
         }
     }
+    public static ArrayList<String> workersNames(ArrayList<Worker> workers) {
+        ArrayList<String> names = new ArrayList<>();
+        for (int i = 0; i < workers.size(); i++) {
+            names.add(workers.get(i).getName());
+        }
+        return names;
+    }
 }
