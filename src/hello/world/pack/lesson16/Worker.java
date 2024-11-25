@@ -13,4 +13,7 @@ public class Worker {
     public int getAge() {
         return this.age;
     }
+    public void info() {
+        System.out.println("Меня зовут " + name + " и мой возраст: " + age);
+    }
 }
