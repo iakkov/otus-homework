@@ -19,4 +19,9 @@ public class Methods {
         }
         return sum;
     }
+    public static void fillList(int number, ArrayList<Integer> list) {
+        for (int i = 0; i < list.size(); i++) {
+            list.set(i, number);
+        }
+    }
 }
