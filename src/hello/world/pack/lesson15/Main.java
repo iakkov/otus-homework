@@ -2,7 +2,29 @@ package hello.world.pack.lesson15;
 
 public class Main {
     public static void main(String[] args) {
-
+        String[][] correctArray = {
+                {"1", "2", "3", "4"},
+                {"1", "2", "3", "4"},
+                {"1", "2", "3", "4"},
+                {"1", "2", "3", "4"}
+        };
+        String[][] incorrectArray = {
+                {"1", "2", "3"},
+                {"1", "2", "3"},
+                {"1", "2", "3"}
+        };
+        try {
+            System.out.println("Сумма элементов равна " + changeToIntAndSum(correctArray));
+        }
+        catch (AppArraySizeException | AppArrayDataException e) {
+            System.out.println("Ошибка: " + e.getMessage());
+        }
+        try {
+            System.out.println("Сумма элементов равна " + changeToIntAndSum(incorrectArray));
+        }
+        catch (AppArraySizeException | AppArrayDataException e) {
+            System.out.println("Ошибка: " + e.getMessage());
+        }
     }
     public static int changeToIntAndSum(String[][] array) throws AppArraySizeException, AppArrayDataException {
         if(array.length != 4 || !checkColumns(array)) {
