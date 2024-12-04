@@ -17,4 +17,12 @@ public class PhoneBook {
     public Set<String> find(String name) {
         return phoneBook.getOrDefault(name, new HashSet<>());
     }
+    public boolean containsPhoneNumber(String phoneNumber) {
+        for(Set<String> phones : phoneBook.values()) {
+            if (phones.contains(phoneNumber)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
