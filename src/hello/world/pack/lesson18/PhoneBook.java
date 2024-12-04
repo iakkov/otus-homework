@@ -14,4 +14,7 @@ public class PhoneBook {
         phoneBook.put(name, new HashSet<>());
         phoneBook.get(name).add(phoneNumber);
     }
+    public Set<String> find(String name) {
+        return phoneBook.getOrDefault(name, new HashSet<>());
+    }
 }
