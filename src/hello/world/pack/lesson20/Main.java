@@ -1,5 +1,6 @@
 package hello.world.pack.lesson20;
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 public class Main {
@@ -13,6 +14,7 @@ public class Main {
         while(start) {
             userWriteFileName();
         }
+
 
 
     }
@@ -42,6 +44,7 @@ public class Main {
             for (String s : fileNames) {
                 if (fileName.equals(s)) {
                     readFile(file);
+                    writeFile(file);
                     start = false;
                 }
             }
@@ -55,7 +58,23 @@ public class Main {
                 System.out.print((char) n);
                 n = in.read();
             }
+            System.out.println();
         } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public static void writeFile(File file) {
+        System.out.println("Введите текст и нажмите ENTER");
+        Scanner console = new Scanner(System.in);
+        String string = console.nextLine();
+
+        try (BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(file, true))) {
+            byte[] buffer = string.getBytes(StandardCharsets.UTF_8);
+            for (int i = 0; i < buffer.length; i++) {
+                out.write(buffer[i]);
+            }
+        }
+        catch (IOException e) {
             e.printStackTrace();
         }
     }
