@@ -9,34 +9,35 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Server {
-    private static final List<ClientHandler> clientHandlers = new ArrayList<>();
+    public class Server {
+        private static final List<ClientHandler> clientHandlers = new ArrayList<>();
 
-    public static void main(String[] args) throws IOException {
-        ServerSocket socket = new ServerSocket(8080);
-        System.out.println("SERVER APPLICATION RUN!");
-        while (true) {
-            Socket client = socket.accept();
-            DataInputStream inputStream = new DataInputStream(client.getInputStream());
-            DataOutputStream outputStream = new DataOutputStream(client.getOutputStream());
-            System.out.println("Клиент с портом :" + client.getPort() + " подключился!");
-            ClientHandler clientHandler = new ClientHandler(client, inputStream, outputStream);
-            clientHandlers.add(clientHandler);
-            outputStream.writeUTF("Введите математическую операцию:");
-            String input = inputStream.readUTF();
-            if (input.equals("exit")) {
-                System.out.println("Клиент с портом :" + client.getPort() + " отключился!");
-                client.close();
-                continue;
+        public static void main(String[] args) throws IOException {
+            ServerSocket socket = new ServerSocket(8080);
+            System.out.println("SERVER APPLICATION RUN!");
+            while (true) {
+                try(Socket client = socket.accept();
+                    DataInputStream inputStream = new DataInputStream(client.getInputStream());
+                    DataOutputStream outputStream = new DataOutputStream(client.getOutputStream()))
+                {
+                    System.out.println("Клиент с портом :" + client.getPort() + " подключился!");
+                    ClientHandler clientHandler = new ClientHandler(client, inputStream, outputStream);
+                    clientHandlers.add(clientHandler);
+                    outputStream.writeUTF("Введите выражение:");
+                    String userInput = inputStream.readUTF();
+                    if (userInput.equals("exit")) {
+                        System.out.println("Клиент с портом :" + client.getPort() + " отключился!");
+                        client.close();
+                        continue;
+                    }
+                    outputStream.writeUTF(calculator(userInput));
+                    outputStream.flush();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
-            outputStream.writeUTF(calculator(input));
         }
-    }
 
-    private static String transformToUpperCase(String userInput) {
-        System.out.println("выполняем трансформацию!");
-        return userInput.toUpperCase();
-    }
     private static String calculator(String input) {
         String result = input.replaceAll("\\s", "");
         char operator = 0;
