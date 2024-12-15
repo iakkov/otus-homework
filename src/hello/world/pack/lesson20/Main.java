@@ -36,7 +36,7 @@ public class Main {
         System.out.println("Пожалуйста, введите ниже название файла, с которым Вы хотите продолжить работу. \nНазвание файла должно содержать расширение файла.");
         Scanner console = new Scanner(System.in);
         String fileName = console.nextLine();
-        File file = new File(FILE + "\\" + fileName);
+        File file = new File(FILE, fileName);
         if (!file.exists()) {
             System.out.println("Вы ввели неверное имя файла, или его не существует, повторите попытку.");
         }
