@@ -21,4 +21,12 @@ public class Box<T extends Fruit> {
     public boolean compare(Box<T> otherBox) {
         return Math.abs(this.weightOfBox() - otherBox.weightOfBox()) < 0.001;
     }
+    public void transferFruits(Box<T> otherBox) {
+        if (this == otherBox) {
+            System.out.println("Нельзя пересыпать фрукты в ту же самую коробку");
+        } else {
+            otherBox.fruits.addAll(this.fruits);
+            this.fruits.clear();
+        }
+    }
 }
