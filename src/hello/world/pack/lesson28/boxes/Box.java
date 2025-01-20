@@ -1,6 +1,7 @@
 package hello.world.pack.lesson28.boxes;
 
 import hello.world.pack.lesson28.Fruit;
+import hello.world.pack.lesson28.Orange;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +19,7 @@ public class Box<T extends Fruit> {
         }
         return result;
     }
-    public boolean compare(Box<T> otherBox) {
+    public boolean compare(Box<?> otherBox) {
         return Math.abs(this.weightOfBox() - otherBox.weightOfBox()) < 0.001;
     }
     public void transferFruits(Box<T> otherBox) {
