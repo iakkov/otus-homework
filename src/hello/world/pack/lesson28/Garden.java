@@ -20,5 +20,8 @@ public class Garden {
         System.out.println("Вес коробки с апельсинами: " + orangeBox.weightOfBox());
 
         System.out.println("Коробки равны по весу: " + appleBox.compare(orangeBox));
+
+        Box<Apple> anotherAppleBox = new Box<>();
+        appleBox.transferFruits(anotherAppleBox);
     }
 }
