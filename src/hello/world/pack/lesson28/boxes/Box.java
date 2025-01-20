@@ -7,4 +7,8 @@ import java.util.List;
 
 public class Box<T extends Fruit> {
     private final List<T> fruits = new ArrayList<>();
+
+    public void addFruit(T fruit) {
+        fruits.add(fruit);
+    }
 }
