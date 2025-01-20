@@ -11,4 +11,11 @@ public class Box<T extends Fruit> {
     public void addFruit(T fruit) {
         fruits.add(fruit);
     }
+    public double weightOfBox() {
+        double result = 0.0;
+        for (int i = 0; i < fruits.size(); i++) {
+            result += fruits.get(i).getWeight();
+        }
+        return result;
+    }
 }
