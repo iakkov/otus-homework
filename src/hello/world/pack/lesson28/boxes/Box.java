@@ -18,4 +18,7 @@ public class Box<T extends Fruit> {
         }
         return result;
     }
+    public boolean compare(Box<T> otherBox) {
+        return Math.abs(this.weightOfBox() - otherBox.weightOfBox()) < 0.001;
+    }
 }
