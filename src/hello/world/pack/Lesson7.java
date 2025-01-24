@@ -6,12 +6,8 @@ public class Lesson7 {
         int[][] array1 = new int[5][5];
         System.out.println(sumOfPositiveElements(array));
 
-        //printStarsSquare(5);
-        //fillArray(array1);
-        //printZeroDiagonalOneSide(array1);
-        //printZeroDiagonalTwoSides(array1);
-        //System.out.println(findMax(array));
-        //System.out.println(calculateSumOfSecondRow(array));
+        fillArray(array1);
+        printZeroDiagonalOneSide(array1);
     }
     public static int sumOfPositiveElements(int[][] array) {
         int sum = 0;
@@ -38,14 +34,14 @@ public class Lesson7 {
                 if (i == j) {
                     array[i][j] = 0;
                 }
-                    System.out.print(array[i][j]);
+                System.out.print(array[i][j]);
             }
             System.out.println();
         }
     }
     public static void printZeroDiagonalTwoSides(int[][] array) {
         for (int i = 0; i < array.length; i++) {
-            for (int j = 0, k = array[i].length - 1; j < array[i].length; j++, k--) {
+            for (int j = 0, k = array.length - 1; j < array.length; j++, k--) {
                 if (i == j || i == k) {
                     array[i][j] = 0;
                 }
