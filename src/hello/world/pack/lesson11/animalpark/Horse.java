@@ -1,17 +1,16 @@
-package hello.world.pack.lesson11;
+package hello.world.pack.lesson11.animalpark;
 
-public class Dog extends Animal {
-    public Dog(String name, int runningSpeed, int swimmingSpeed, int stamina) {
+public class Horse extends Animal {
+    public Horse(String name, int runningSpeed, int swimmingSpeed, int stamina) {
         super(name, runningSpeed, swimmingSpeed, stamina);
     }
     public double swim(int distance) {
-        if (stamina < (distance * 2)) {
+        if (stamina < (distance * 4)) {
             System.out.println(name + " устал.");
             return -1;
         }
-        stamina = stamina - (distance * 2);
+        stamina = stamina - (distance * 4);
         System.out.println(name + " проплыл " + distance + " метров. Осталось " + stamina + " единиц выносливости.");
-        double time = (distance / swimmingSpeed) + (distance % swimmingSpeed);
-        return time;
+        return (double)(distance / swimmingSpeed);
     }
 }
