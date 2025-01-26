@@ -10,6 +10,9 @@ public class Main {
             String fileName = console.nextLine();
             System.out.println("Введите искомую последовательность символов: ");
             String searchKey = console.nextLine();
+
+            int overlaps = countOverlaps(fileName, searchKey);
+            System.out.println("Количество раз, которое данная последовательность символов встречается в файле: " + overlaps);
         } catch (Exception e) {
             e.printStackTrace();
         }
