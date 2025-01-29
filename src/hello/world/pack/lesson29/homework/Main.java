@@ -2,6 +2,7 @@ package hello.world.pack.lesson29.homework;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class Main {
@@ -22,8 +23,9 @@ public class Main {
     public static int countOverlaps(String fileName, String searchKey) {
         int count = 0;
         int searchLength = searchKey.length();
+        String filePath = "src/hello/world/pack/lesson29/homework/";
         try (BufferedReader bufferedReader = new BufferedReader(
-                new InputStreamReader(new FileInputStream("filename"), StandardCharsets.UTF_8))) {
+                new InputStreamReader(new FileInputStream(String.valueOf(Paths.get(filePath, fileName))), StandardCharsets.UTF_8))) {
             String line;
             while ((line = bufferedReader.readLine()) != null) {
                 for (int i = 0; i < line.length() - searchLength; i++) {
@@ -37,6 +39,6 @@ public class Main {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        return 0;
+        return count;
     }
 }
