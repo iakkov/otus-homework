@@ -15,7 +15,11 @@ public class Main {
             String searchKey = console.nextLine();
 
             int overlaps = countOverlaps(fileName, searchKey);
-            System.out.println("Количество раз, которое данная последовательность символов встречается в файле: " + overlaps);
+            if (overlaps == -1) {
+                System.out.println("Файл не найден!");
+            } else {
+                System.out.println("Количество раз, которое данная последовательность символов встречается в файле: " + overlaps);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -35,7 +39,7 @@ public class Main {
                 }
             }
         } catch (FileNotFoundException e) {
-            System.out.println("Файл не найден!");
+            return -1;
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
