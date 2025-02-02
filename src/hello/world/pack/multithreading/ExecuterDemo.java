@@ -13,6 +13,15 @@ import java.util.concurrent.Executors;
 public class ExecuterDemo {
     public static void main(String[] args) {
         ExecutorService serv = Executors.newFixedThreadPool(4);
+        /*
+        Виды пулов потоков
+
+        1) SingleThreadExecutor - пул потоков, состоящий всего из одного потока;
+        2) FixedThreadPool - пул потоков фиксированного размера, максимальное количество рабочих потоков задается при создании пула;
+        3) CachedThreadPool - автоматически расширяемый пул потоков, при постановке задачи,
+        если нет свободного потока, то пул создает новый и дает ему задачу;
+        4) ScheduledThreadPool, SingleThreadScheduledExecutor - пулы, позволяющие выполнять задачи по расписанию.
+         */
         for (int i = 1; i <= 8; i++) {
             final int index = i;
             serv.execute(() -> {
