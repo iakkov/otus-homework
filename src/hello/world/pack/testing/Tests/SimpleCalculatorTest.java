@@ -2,6 +2,7 @@ package hello.world.pack.testing.Tests;
 
 import hello.world.pack.testing.SimpleCalculator;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 class SimpleCalculatorTest {
@@ -11,6 +12,7 @@ class SimpleCalculatorTest {
     // Act - выполнение тестируемого кода
     // Assert - проверка результата
     @Test
+    @DisplayName("Это метод сложения!")
     void testAdd() {
         simpleCalculator = new SimpleCalculator();
         Assertions.assertEquals(2, simpleCalculator.add(1, 1));
