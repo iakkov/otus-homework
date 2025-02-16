@@ -3,10 +3,25 @@ package hello.world.pack.testing.homework;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
-import static org.junit.jupiter.api.Assertions.*;
+import java.util.stream.Stream;
 
 class MainTest {
+    static Stream<Arguments> providerOfTrueArrays() {
+        return Stream.of(
+                Arguments.of(new int[] {1, 2}, true),
+                Arguments.of(new int[] {1, 2, 2, 1}, true)
+        );
+    }
+    static Stream<Arguments> providerOfFalseArrays() {
+        return Stream.of(
+                Arguments.of(new int[] {1, 1}, false),
+                Arguments.of(new int[] {1, 3}, false)
+        );
+    }
 
     @Test
     @DisplayName("Метод 1")
@@ -18,28 +33,20 @@ class MainTest {
         Assertions.assertArrayEquals(expectedArray, actualArray);
     }
 
-    @Test
+    @ParameterizedTest
+    @MethodSource("providerOfTrueArrays")
     @DisplayName("Метод 2 c true")
-    void isCorrectArrayTrue() {
-        int[] array1 = new int[] {1, 2};
-        int[] array4 = new int[] {1, 2, 2, 1};
+    void isCorrectArrayTrue(int[] array, boolean expected) {
+        boolean trueArray = Main.isCorrectArray(array);
 
-        boolean trueArray1 = Main.isCorrectArray(array1);
-        boolean trueArray2 = Main.isCorrectArray(array4);
-
-        Assertions.assertTrue(trueArray1);
-        Assertions.assertTrue(trueArray2);
+        Assertions.assertTrue(trueArray);
     }
-    @Test
-    @DisplayName("Метод 2 с false")
-    void isCorrectArrayFalse() {
-        int[] array2 = new int[] {1, 1};
-        int[] array3 = new int[] {1, 3};
+    @ParameterizedTest
+    @MethodSource("providerOfFalseArrays")
+    @DisplayName("Метод 2 c false")
+    void isCorrectArrayFalse(int[] array, boolean expected) {
+        boolean falseArray = Main.isCorrectArray(array);
 
-        boolean falseArray1 = Main.isCorrectArray(array2);
-        boolean falseArray2 = Main.isCorrectArray(array3);
-
-        Assertions.assertFalse(falseArray1);
-        Assertions.assertFalse(falseArray2);
+        Assertions.assertFalse(falseArray);
     }
 }
